@@ -1,0 +1,1168 @@
+/* CSS RESET + scroll settings */
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: subpixel-antialiased;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+/* costum scrollbar settings */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgb(0, 0, 0); 
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+
+/* FONTS IMPORTED
+Roc Grotesk ExtraBold
+font-family: roc-grotesk, sans-serif;
+font-weight: 700;
+font-style: normal;
+
+Roc Grotesk Regular
+font-family: roc-grotesk, sans-serif;
+font-weight: 400;
+font-style: normal;
+
+Roc Grotesk Compressed
+font-family: roc-grotesk-compressed, sans-serif;
+font-weight: 400;
+font-style: normal;
+
+Roc Grotesk Compressed ExtraBold
+font-family: roc-grotesk-compressed, sans-serif;
+font-weight: 700;
+font-style: normal;
+
+Roc Grotesk Condensed
+font-family: roc-grotesk-condensed, sans-serif;
+font-weight: 400;
+font-style: normal;
+
+Roc Grotesk Condensed ExtraBold
+font-family: roc-grotesk-condensed, sans-serif;
+font-weight: 700;
+font-style: normal;
+
+Roc Grotesk Wide
+font-family: roc-grotesk-wide, sans-serif;
+font-weight: 400;
+font-style: normal;
+
+Roc Grotesk Wide ExtraBold
+font-family: roc-grotesk-wide, sans-serif;
+font-weight: 700;
+font-style: normal;
+
+Roc Grotesk ExtraWide
+font-family: roc-grotesk-extrawide, sans-serif; 
+font-weight: 400;
+font-style: normal;
+
+Roc Grotesk ExtraWide ExtraBold
+font-family: roc-grotesk-extrawide, sans-serif;
+font-weight: 700;
+font-style: normal;
+
+*/
+
+/* Variabler */
+:root {
+    /* farver */
+    --black: #0C0C0C;
+    --red: #F1402F;
+    --beige: #FFF9E4;
+
+    /* fonte - font, familiy */
+    --wide: 'roc-grotesk-wide', sans-serif;
+    --regular: 'Roc Grotesk', sans-serif;
+}
+
+b{
+    font-weight: 500;
+}
+
+/* GLOBALE SETTINGS */
+h1{
+    font-family: var(--wide);
+    font-weight: 500;
+    font-size: 5rem;
+    color: var(--beige);
+    padding-bottom: 1rem;
+    clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
+    opacity: 0;
+    transform: translateY(100px);
+}
+
+h3{
+    font-family: var(--wide);
+    font-size: 2rem;
+    font-weight: 100;
+    opacity: 0.5;
+    color: var(--beige);
+    clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
+    opacity: 0;
+}
+
+/* Mouse follower effect GSAP */
+.ball{
+    background-color: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99999999;
+    outline: 1px solid var(--beige);
+    width: 15px;
+    height: 15px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    pointer-events: none;
+    mix-blend-mode: exclusion;
+    outline-offset: 15px;
+}
+
+/* hover over computer vid m. link - mousefollow skifter */
+#klikmig{
+    opacity: 0;
+    color: var(--beige);
+    font-family: var(--regular);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: none;
+}
+
+.computerVideo-container:hover{
+    cursor: none;
+}
+
+/* NAVBAR */
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--black);
+    padding: 3rem 8rem 3rem 8rem;
+    width: 100%;
+    position: fixed;
+    z-index: 9999999;
+    height: 10vh;
+}
+
+#navLogo{
+    transform: translateY(100px);
+    opacity: 0;
+}
+
+#navLogo svg{
+    fill: var(--beige);
+    height: 30px;
+}
+
+#navLogo svg:hover{
+    cursor: pointer;
+    opacity: 0.5;
+    transition: all 300ms ease-in-out;
+}
+
+#navLogo a{
+    text-decoration: none;
+    color: var(--beige);
+    font-family: var(--wide);
+}
+
+#navIkoner{
+    display: flex;
+    gap: 2rem;
+    transform: translateY(100px);
+    opacity: 0;
+}
+
+#navIkoner svg{
+    cursor: pointer;
+    height: 20px;
+    width: auto;
+    fill: var(--beige);
+}
+
+#navIkoner svg:hover{
+    opacity: 0.5;
+    transition: 0.5s ease-out;
+}
+
+/* Menu, der åbnes når burger klikkes */
+#openMenu{
+    display: none;
+    height: 100vh;
+    width: 100vw;
+    z-index: 99999999;
+    background-color: var(--black);
+    padding: 10rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+#openMenu svg{
+    cursor: pointer;
+    position: fixed;
+    margin: 3rem 8rem 3rem 8rem;
+    top: 0;
+    right: 0;
+    height: 25px;
+    fill: var(--beige);
+}
+
+#openMenu svg:hover{
+    cursor: pointer;
+    opacity: 0.5;
+    transition: 0.5s ease-out;
+}
+
+#openMenu ul{
+    font-family: var(--wide);
+    font-size: 3rem;
+    list-style-type: none;
+}
+
+.menulink{
+    color: var(--beige);
+    opacity: 0;
+    transform: translateY(100px);
+}
+
+.menulink:hover{
+    opacity: 0.5;
+    text-decoration: underline;
+    text-underline-offset: 0.5rem;
+    transition: 2s ease-in-out;
+}
+
+#openMenu a{
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    padding-bottom: 3rem;
+    color: var(--beige);
+}
+
+
+/* landingpage / startside */
+#landingPage{
+    display: flex;
+    justify-content: space-between;
+    height: 100vh;
+    width: 100vw;
+    background-color: var(--black);
+    padding-left: 8rem;
+    padding-right: 8rem;
+    padding-bottom: 10rem;
+    gap: 50px;
+}
+
+#landingText{
+    padding-top: 15rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#landingPictures{
+    padding-top: 12rem;
+    display: flex;
+}
+
+#landingPictures img{
+    clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
+    opacity: 0;
+    height: 475px;
+    width: auto;
+}
+
+/* mute og unmute knap til navbar */
+#unmuteknap{
+    display: none;
+}
+
+#skjulknap{
+    display: none;
+}
+
+/* KNAPPER */
+#secondaryBtn{
+    width: 200px;
+    font-size: 1.2rem;
+    font-family: var(--wide);
+    border-radius: 50px;
+    text-decoration: none;
+    background-color: var(--black);
+    padding: 0.6rem 2.3rem 0.6rem 2.3rem;
+    border: 1px solid var(--beige);
+    color: var(--beige);
+    margin-top: 3rem;
+    display: inline-block;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(50px);
+}
+
+#btn{
+    text-align: center;
+    font-size: 1.2rem;
+    font-family: var(--wide);
+    border-radius: 50px;
+    text-decoration: none;
+    background-color: var(--black);
+    padding: 0.6rem 2.3rem 0.6rem 2.3rem;
+    border: 1px solid var(--beige);
+    color: var(--beige);
+    margin-top: 3rem;
+    cursor: pointer;
+}
+
+#btn:hover{
+    background-color: var(--beige);
+    border: 1px solid var(--beige);
+    color: var(--black);
+    cursor: pointer;
+    transition: 0.5s ease-in-out;
+}
+
+
+#secondaryBtn:hover{
+    background-color: var(--beige);
+    border: 1px solid var(--beige);
+    color: var(--black);
+    display: inline-block;
+    cursor: pointer;
+    transition: 0.5s ease-in-out;
+}
+
+/* VIDEO STORY.HTML */
+/* scroll bar til bunden af skærmen */
+.scrollprogressbar{
+    position: fixed;
+    bottom: 0;
+    z-index: 99999;
+    width: 100%;
+    background-color: #f1f1f1;
+}
+
+.progress-container{
+    width: 100%;
+    height: 5px;
+    background: var(--black);
+}
+
+.progress-bar {
+    height: 5px;
+    background: var(--red);
+    width: 0%;
+}
+
+/* headphones on video - ikke brugt pt. */
+#headPhonesOn{
+    display: none;
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    font-family: var(--wide);
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    color: var(--red);
+}
+
+#headPhonesOn h4{
+    font-weight: 300;
+    font-size: 2rem;
+    position: fixed;
+    padding-top: 85vh;
+    text-shadow: 0 0 3px var(--red);
+}
+
+#headPhonesOn video{
+    width: 100%;
+    height: 100%;
+}
+
+/* COMPUTERSTORY - landing story */
+#computerStory{
+    padding-top: 9rem;
+    padding-left: 8rem;
+    padding-right: 8rem;
+    padding-bottom: 0rem;
+    font-family: var(--wide);
+    color: var(--beige);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: var(--black);
+    height: 90vh;
+    line-height: 150%;
+    gap: 50px;
+}
+
+#computerStoryText{
+    max-width: 53ch;
+}
+
+#computerVideo{
+    transform: translateY(100px);
+    width: 550px;
+    opacity: 0;
+}
+
+#computerStoryText h5{
+    clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
+    opacity: 0;
+    transform: translateY(100px);
+    line-height: 120%;
+    font-size: 2.5rem;
+    font-weight: 500;
+    padding-bottom: 1.5rem;
+}
+
+#computerStoryText svg{
+    animation: bouncePil 1s infinite ease;
+    height: 15px;
+    fill: var(--beige);
+}
+
+#computerStoryText p{
+    clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
+    opacity: 0;
+    font-weight: 300;
+    font-family: var(--regular);
+}
+
+#scrollIndicator{
+    opacity: 0;
+    display: flex;
+    gap: 10px;
+    padding-top: 5rem;
+    transform: translateY(20px);
+    font-family: var(--regular);
+    font-weight: 100;
+}
+
+#scrollIndicator h6{
+    font-weight: 400;
+    font-size: 1rem;
+}
+
+@keyframes bouncePil {
+    0% { 
+        transform: translateY(0px);
+    }
+    
+    50% { 
+        transform: translateY(5px);
+    }
+
+    100% { 
+        transform: translateY(0px);
+    }
+}
+
+#flightStory{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--black);
+}
+
+#flightStory h4{
+    padding: 2rem;
+    background-color: black;
+    font-weight: 400;
+    font-family: var(--regular);
+    z-index: 999;
+    color: var(--beige);
+    max-width: 60ch;
+    margin-bottom: 0rem;
+}
+
+#flightStory img{
+    height: 700px;
+    width: auto;
+    opacity: 0;
+    transform: translateY(100px);
+    filter: blur(50px);
+}
+
+#flightStory2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--black);
+}
+
+#flightStory2 h4{
+    padding: 2rem;
+    background-color: black;
+    font-weight: 400;
+    font-family: var(--regular);
+    z-index: 999;
+    color: var(--beige);
+    max-width: 60ch;
+}
+
+#flightStory2 img{
+    height: 700px;
+    width: auto;
+    opacity: 0;
+    transform: translateY(100px);
+    filter: blur(50px);
+}
+
+#surfingStory{
+    padding-top: 10rem;
+    height: 100%;
+    width: 100%;
+    background-color: var(--black);
+}
+
+.vidbox{
+    position: absolute;
+    z-index: 2;
+}
+
+#surfingStory video{
+    opacity: 0;
+    width: 100%;
+}
+
+.surfingboxoverlay{
+    z-index: 999999;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.surfingboxoverlay img{
+    max-width: 100%;
+    opacity: 0;
+}
+
+#officeStory{
+    gap: 200px;
+    color: var(--beige);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 12rem;
+    padding-left: 8rem;
+    padding-right: 8rem;
+    padding-bottom: 5rem;
+}
+
+#officeStory p{
+    font-family: var(--regular);
+    font-weight: 100;
+    font-size: 1.2rem;
+    color: var(--beige);
+    max-width: 45ch;
+}
+
+#officeStory img{
+    filter: blur(50px);
+    opacity: 0;
+    max-height: 500px;
+}
+
+#office{
+    background-color: var(--black);
+}
+
+#officeStoryTextBox{
+    opacity: 0;
+    display: flex;
+    gap: 75px;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+#kontorbox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#barndom h4{
+    font-size: 4rem;
+    font-weight: 300;
+    color: var(--beige);
+}
+
+#barndom p{
+    padding-top: 2rem;
+    font-size: 2rem;
+    font-weight: 100;
+    color: var(--beige);
+}
+
+#barndom{
+    text-align: center;
+    color: var(--beige);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+    padding-left: 8rem;
+    padding-right: 8rem;
+    font-family: var(--wide);
+}
+
+#barndomBox{
+    background-color: var(--black);
+}
+
+#barndomText{
+    transform: scale(50%);
+    opacity: 0;
+}
+
+#sabbataarText{
+    transform: scale(50%);
+    opacity: 0;
+}
+
+#sabbataar h4{
+    font-size: 4rem;
+    font-weight: 300;
+    color: var(--beige);
+}
+
+#sabbataar p{
+    padding-top: 2rem;
+    font-size: 2rem;
+    font-weight: 100;
+    color: var(--beige);
+}
+
+#sabbataar{
+    height: 100vh;
+    text-align: center;
+    color: var(--beige);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--black);
+    padding-top: 10rem;
+    padding-left: 8rem;
+    padding-right: 8rem;
+    padding-bottom: 10rem;
+    font-family: var(--wide);
+}
+
+#surfing-vid{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    background-color: var(--black);
+}
+
+.vidboxen{
+    height: 100vh;
+    position: absolute;
+    z-index: 2;
+}
+
+#surfing-vid video{
+    width: 100%;
+}
+
+.vidboxen-box{
+    height: 100vh;
+    color: var(--beige);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.vidboxen-tekst{
+    background-color: black;
+    position: relative;
+    max-width: 60ch;
+    padding: 2rem;
+    z-index: 999;
+    
+}
+
+.vidboxen-tekst p{
+    font-weight: 400;
+    font-family: var(--regular);
+    color: var(--beige);
+}
+
+/* GALLERI BARNDOM */
+#kortsection{
+    background-color: var(--black);
+    padding-top: 10rem;
+    width: 100%;
+    height: 100%;
+}
+
+#kortbox img{
+    position: relative;
+    width: 100%;
+    height: auto;
+    opacity: 0;
+    transform: scale(50%);
+}
+
+#kortbox svg{
+    width: 100%;
+    height: auto;
+    z-index: 10;
+    stroke-width: 7;
+    position: absolute;
+    stroke: #F1402F;
+    stroke-dasharray: 15;
+    clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+}
+
+#pathoverlaybox{
+    position: relative;
+    z-index: 10;
+}
+
+#efterSabbataarText{
+    transform: scale(50%);
+    opacity: 0;
+}
+
+#efter-sabbataar h4{
+    font-size: 4rem;
+    font-weight: 300;
+}
+
+#efter-sabbataar p{
+    padding-top: 2rem;
+    font-size: 2rem;
+    font-weight: lighter;
+}
+
+#efter-sabbataar{
+    height: 100vh;
+    text-align: center;
+    color: var(--beige);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--black);
+    padding-top: 10rem;
+    padding-left: 8rem;
+    padding-right: 8rem;
+    font-family: var(--wide);
+}
+
+/* Sabbataar rejser map*/
+#mapBox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--black);
+}
+
+#sabbataar-map {
+    width: 100%;
+    height: 644px;
+}
+
+#mapDescription h4 {
+    font-weight: lighter;
+    font-family: var(--wide);
+    font-size: 1rem;
+}
+#mapDescription p {
+    font-weight: lighter;
+    font-family: 'Roc Grotesk Regular', sans-serif;
+    font-size: 0.8rem;
+}
+
+/* SABBATÅR GALLERI GSAP */
+#gallerisabbat{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--black); 
+    padding-top: 13rem;
+    padding-left: 8rem;
+    padding-right: 8rem;
+}
+
+#sabbatbox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#gallerisabbat img{
+    max-width: 90%;
+    height: auto;
+}
+
+/* Guldbygningen */
+.guldbygning{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+    width: 100%;
+    background-color: var(--black);
+    padding-top: 10rem;
+    padding-left: 8rem;
+    padding-right: 8rem;
+    padding-bottom: 15rem;
+}
+
+.tobilleder{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.guldbygning img{
+   width: 50%;
+}
+
+#bygningBillede{
+    position: absolute;
+}
+
+#flyBillede{
+    opacity: 0;
+    position: absolute;
+}
+
+.guldbygning-box{
+    color: var(--black);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--black);
+    padding-bottom: 2rem;
+}
+
+.guldbygning-tekst{
+    font-family: var(--regular);
+    font-size: 1.2rem;
+    font-weight: lighter;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 1rem;
+    padding-left: 30%;
+    padding-right: 30%;
+    padding-bottom: 6rem;
+    background-color: var(--black);
+    color: var(--beige);
+}
+
+/* Er du klar til dit livs rejse - eaaapromo */
+#promoeaaa{
+    text-align: center;
+    background-color: var(--beige);
+    color: var(--black);
+    font-family: var(--wide);
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-left: 8rem;
+    padding-right: 8rem;
+}
+
+#promologo{
+    transform: translateY(200px);
+    opacity: 0;
+}
+
+#promoeaaa svg{
+    height: 45px;
+}
+
+#promotext{
+    padding-top: 9rem;
+    padding-bottom: 2rem;
+    transform: translateY(30%);
+    opacity: 0;
+}
+
+#promoeaaa h5{
+    font-weight: 400;
+    font-size: 5rem;
+    padding-bottom: 3rem;
+}
+
+/* Thinking - grublende mand */
+#thinking{
+    padding-left: 8rem;
+    padding-right: 8rem;
+    padding-top: 10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: var(--black);
+    font-family: var(--wide);
+    font-size: 7px;
+    overflow: hidden;
+}
+
+#thinking img{
+    height: 150px;
+    width: auto;
+}
+
+#paths1 svg{
+    transform: translateY(-8%);
+    height: 550px;
+}
+
+#paths3 svg{
+    transform: translateY(-8%);
+    height: 350px;
+}
+
+#paths2 svg{
+    transform: translateY(-8%);
+    height: 850px;
+}
+
+#thinking text{
+    fill: var(--beige);
+}
+
+#thinking path{
+    fill: none;
+}
+
+#paths1, #paths2, #paths3{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+}
+
+#paths1{
+    opacity: 0.7;
+}
+
+#paths3{
+    opacity: 0.4;
+}
+
+/* FORTID */
+.fortid{
+    font-family: 'Roc Grotesk', sans-serif;
+    font-weight: lighter;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 12rem;
+    padding-left: 30%;
+    padding-right: 30%;
+    padding-bottom: 5rem;
+    background-color: var(--black);
+    color: var(--beige);
+}
+
+.fortid2{
+    font-family: var(--regular);
+    font-weight: lighter;
+    font-size: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 50px;
+    padding-top: 3rem;
+    padding-left: 30%;
+    padding-right: 30%;
+    background-color: var(--black);
+    color: var(--beige);
+}
+
+.fortid3{
+    font-family: var(--regular);
+    font-weight: lighter;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 6rem;
+    padding-left: 30%;
+    padding-right: 30%;
+    background-color: var(--black);
+    color: var(--beige);
+}
+
+.sabbattekst{
+    font-family: var(--regular);
+    font-weight: lighter;
+    font-size: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 50px;
+    padding-top: 15rem;
+    padding-left: 30%;
+    padding-right: 30%;
+    padding-bottom: 15rem;
+    background-color: var(--black);
+    color: var(--beige);
+}
+
+/* GSAP GALLERI */
+#gsapGalleri{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    width: 100%;
+    height: 150vh;
+    overflow: hidden;
+    background-color: var(--black);
+}
+
+#gsapGalleri button{
+    font-family: var(--wide);
+    font-weight: 500;
+    background-color: var(--black);
+    border: none;
+    padding: 1rem;
+    color: var(--beige);
+
+}
+
+#gsapGalleri button:hover{
+    cursor: pointer;
+}
+  
+.controls{
+    display: flex;
+    gap: 100px;
+    padding: 10px;  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70px;
+    min-height: 70px;
+}
+
+.controls svg{
+    fill: var(--beige);
+    height: 30px;
+}
+
+.slides-container{
+    position: relative;
+    overflow: hidden;  
+    display: flex;
+    flex: 1;
+}
+
+.slide{
+    position: absolute;
+    font-size: 90px;
+    font-weight: 700;
+    color: rgba(255,255,255,0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+
+.slides-inner{
+    position: relative;
+    height: 100%;
+    width: 100%;  
+    overflow: hidden;
+}
+
+/* audio styling */
+audio::-webkit-media-controls-enclosure {
+    background-color: var(--black);
+    border: 1px solid var(--beige);
+}
+
+audio::-webkit-media-controls-play-button {
+    background-color: var;
+    border-radius: 50%;
+}
+
+audio::-webkit-media-controls-current-time-display {
+    color: var(--beige);
+}
+
+audio::-webkit-media-controls-time-remaining-display {
+    color: var(--beige);
+}
+
+audio::-webkit-media-controls-play-button {
+    background-color: var(--beige);
+    border-radius: 50%;
+}
+
+audio::-webkit-media-controls-timeline {
+    background-color: var(--beige);
+    border-radius: 25px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+audio::-webkit-media-controls-volume-slider {
+    background-color: var(--beige);
+    color: var(--beige);
+    border-radius: 25px;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+audio::-webkit-media-controls-mute-button {
+    background-color: var(--beige);
+    border-radius: 50%;
+  }
+
+
+
+
+

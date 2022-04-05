@@ -1,0 +1,197 @@
+{
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "billede": "media/guatemala.png",
+        "overskrift": "Guatemala",
+        "tekst": "Solopgang fra vulkanen Acatenango"
+      },
+      "geometry": {
+        "coordinates": [
+          -90.390001,
+          15.605589
+        ],
+        "type": "Point"
+      },
+      "id": "country.10004903499752530"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "overskrift": "Chile",
+        "billede": "media/chile.png",
+        "tekst": "Et hus nogle venner boede i"
+      },
+      "geometry": {
+        "coordinates": [
+          -69.761008,
+          -26.783346
+        ],
+        "type": "Point"
+      },
+      "id": "country.10394314763731110"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "overskrift": "Bolivia",
+        "billede": "media/bolivia.png",
+        "tekst": "Salt ørken i Bolivia"
+      },
+      "geometry": {
+        "coordinates": [
+          -64.269605,
+          -16.970662
+        ],
+        "type": "Point"
+      },
+      "id": "country.11108279334747550"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "billede": "media/peru.png",
+        "overskrift": "Peru",
+        "tekst": "Machu Picchu trail"
+      },
+      "geometry": {
+        "coordinates": [
+          -75.311131,
+          -10.151092
+        ],
+        "type": "Point"
+      },
+      "id": "country.11374003121964510"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "billede": "media/colombia.png",
+        "overskrift": "Colombia ",
+        "tekst": "Flod i Columbia"
+      },
+      "geometry": {
+        "coordinates": [
+          -73.129056,
+          3.065087
+        ],
+        "type": "Point"
+      },
+      "id": "country.12227578366646840"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "billede": "media/ecuador.png",
+        "overskrift": "Ecuador",
+        "tekst": "Mountain Bike trail"
+      },
+      "geometry": {
+        "coordinates": [
+          -78.432914,
+          -1.160171
+        ],
+        "type": "Point"
+      },
+      "id": "country.14642227724747030"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "billede": "media/danmark.jpg",
+        "overskrift": "Danmark",
+        "tekst": "Vestkysten i Danmark"
+      },
+      "geometry": {
+        "coordinates": [
+          10.046296,
+          55.963397
+        ],
+        "type": "Point"
+      },
+      "id": "country.14832299115269000"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "overskrift": "Nicaragua",
+        "billede": "media/nicaragua.jpg",
+        "tekst": "Oliver surfer i Nicaragua"
+      },
+      "geometry": {
+        "coordinates": [
+          -84.919941,
+          12.335542
+        ],
+        "type": "Point"
+      },
+      "id": "country.8319317397080220"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "billede": "media/elsalvador.png",
+        "overskrift": "El Salvador",
+        "tekst": "Solnedgang ved et surf-spot"
+      },
+      "geometry": {
+        "coordinates": [
+          -88.866511,
+          13.736896
+        ],
+        "type": "Point"
+      },
+      "id": "country.8557697608768610"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "billede": "media/costarica.png",
+        "overskrift": "Costa Rica ",
+        "tekst": "Lejligheds hygge med Olivers far på besøg"
+      },
+      "geometry": {
+        "coordinates": [
+          -84.200914,
+          10.257794
+        ],
+        "type": "Point"
+      },
+      "id": "country.9179111388611280"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "billede": "media/argentina.png",
+        "overskrift": "Argentina ",
+        "tekst": "Bjergbestigning i Argentina"
+      },
+      "geometry": {
+        "coordinates": [
+          -63.954193,
+          -36.252002
+        ],
+        "type": "Point"
+      },
+      "id": "country.9654124497801190"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "billede": "media/panama.png",
+        "overskrift": "Pananma ",
+        "tekst": "Klippeskrænt ved vandet i Panama"
+      },
+      "geometry": {
+        "coordinates": [
+          -80.268175,
+          8.704734
+        ],
+        "type": "Point"
+      },
+      "id": "country.9972751234420470"
+    }
+  ],
+  "type": "FeatureCollection"
+}

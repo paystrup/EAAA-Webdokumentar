@@ -2,6 +2,8 @@
 ## Gruppe 5. - Øvelse. Webdokumentar til EAAA
 ### Lavet af Christoffer Ingemann, Karoline Aaby og Nikolaj Friis Pejstrup
 
+Live prototype: https://webdok.paystrup.dk/ 
+
 ### Lavet med HTML, CSS, JS, GSAP, JSON og API'er.
 Pt. ikke udviklet fuldt responsivt grundet tidsmangel i projektet. Fungerer pt til desktop.
 

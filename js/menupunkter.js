@@ -13,6 +13,11 @@ menuUL.innerHTML = `
     </li>
 `
 
+// navbar logo onclick href til index, dynamisk link
+navLogo.addEventListener('click', function(){
+    location.href = 'index.html'
+  })
+
 // åben menu med burger onclick, afspil animationer
 hamburgermenu.addEventListener('click', function(){
     openMenu.style.display = "block";

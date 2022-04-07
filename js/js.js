@@ -1,10 +1,7 @@
 // registrer GSAP plugins
 gsap.registerPlugin(ScrollTrigger, MotionPathPlugin, Draggable);
 
-// navbar logo onclick href til index, dynamisk link
-navLogo.addEventListener('click', function(){
-  location.href = 'index.html'
-})
+
 
 // scroll progressbar
 // inspiration https://www.w3schools.com/howto/howto_js_scroll_indicator.asp 

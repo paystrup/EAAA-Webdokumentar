@@ -124,7 +124,7 @@ h3{
 
 /* Mouse follower effect GSAP */
 .ball{
-    background-color: none;
+    background-color: transparent;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -645,12 +645,12 @@ nav{
 }
 
 #barndomText{
-    transform: scale(50%);
+    transform: scale(0.5);
     opacity: 0;
 }
 
 #sabbataarText{
-    transform: scale(50%);
+    transform: scale(0.5);
     opacity: 0;
 }
 
@@ -739,7 +739,7 @@ nav{
     width: 100%;
     height: auto;
     opacity: 0;
-    transform: scale(50%);
+    transform: scale(0.5);
 }
 
 #kortbox svg{
@@ -759,7 +759,7 @@ nav{
 }
 
 #efterSabbataarText{
-    transform: scale(50%);
+    transform: scale(0.5);
     opacity: 0;
 }
 
@@ -1125,7 +1125,6 @@ audio::-webkit-media-controls-enclosure {
 }
 
 audio::-webkit-media-controls-play-button {
-    background-color: var;
     border-radius: 50%;
 }
 
@@ -1160,7 +1159,7 @@ audio::-webkit-media-controls-volume-slider {
 audio::-webkit-media-controls-mute-button {
     background-color: var(--beige);
     border-radius: 50%;
-  }
+}
 
 
 

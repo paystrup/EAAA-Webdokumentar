@@ -55,7 +55,7 @@ function unmuteMe(elem) {
 function unmutePage() {
     var elems = document.querySelectorAll("audio");
     [].forEach.call(elems, function(elem) { unmuteMe(elem); });
-    // forloop igennem alle elementer og brug unmuteMe 
+    // [] = array så forloop kan bruges, forloop igennem alle elementer og brug unmuteMe 
     //function på alle audio elementer
 }
 
